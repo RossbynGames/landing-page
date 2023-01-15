@@ -12,16 +12,47 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: radial-gradient(#132a41, #000);
+    background-image: url('glyph-teaser.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+
+h2 {
+    font-family: 'Fredoka One', cursive;
+    font-weight: 400;
+    font-size: 50px;
+    margin: 30px 0;
+}
+
+p {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+mark {
+    font-weight: 900;
+    color: var(--accent-color);
+    background-color: transparent;
+}
+
+h2 mark {
+    font-weight: 400;
 }
 
 a {
     font-weight: 900;
     color: var(--accent-color);
     text-decoration: none;
+    transition: color .2s;
+}
+
+a:hover {
+    color: #fff;
 }
 
 .container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,58 +63,64 @@ a {
     margin: 0 auto;
 }
 
+.page {
+    position: absolute;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.page--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
 .logo__svg {
     width: 100%;
     max-width: 750px;
+    filter: drop-shadow(0 0 10px #0000004f);
+}
+
+.separator {
+    width: 100%;
+    height: 2px;
+    margin: 20px 0;
+    background: linear-gradient(90deg, #ffffff00, #fff, #ffffff00);
 }
 
 .info {
     text-align: center;
 }
 
-.info__heading {
-    font-size: 50px;
-    font-weight: 100;
-    margin: 30px 0;
+.info--shaded {
+    background-color: #311c3f7f;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 20px #0000004f;
+    padding: 50px;
 }
 
-.info__heading > span {
-    font-family: 'Permanent marker', cursive;
-    font-weight: 400;
-    color: var(--accent-color);
+.button {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: .6em;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 10px 10px 10px 20px;
+    border: 2px solid #fff;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
 
-.info__text {
-    font-size: 30px;
-    font-weight: 900;
-    line-height: 1.8;
-    margin: 0;
-}
-
-.info__text > mark {
-    color: var(--accent-color);
-    background-color: transparent;
-}
-
-.info__text--smaller {
-    font-size: 20px;
-    font-weight: 400;
+.button:hover {
+    color: #000;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 @media screen and (max-width: 480px) {
     .container {
         padding: 15px;
-    }
-
-    .info__heading {
-        font-size: 34px;
-    }
-
-    .info__text {
-        font-size: 22px;
-    }
-
-    .info__text--smaller {
-        font-size: 16px;
     }
 }
